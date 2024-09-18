@@ -20,15 +20,15 @@ class Empleado:
         self.nombre = nombre
         self.cargo = cargo
         self.salario = salario
-  
+
     def calcular_salario(self):
         # Lógica para calcular el salario
         return self.salario * 1.1  # Ejemplo simple: 10% de aumento
-  
+
     def guardar_en_base_de_datos(self):
         # Lógica para guardar el empleado en la base de datos
         print(f"Guardando empleado {self.nombre} en la base de datos")
-  
+
     def generar_reporte(self):
         # Lógica para generar un reporte del empleado
         return f"Reporte de {self.nombre}: Cargo: {self.cargo}, Salario: {self.salario}"
@@ -81,7 +81,7 @@ reporte = generador_reporte.generar_reporte(empleado)
 
 ### OCP - ( Open Closed Principle)
 
-El segundo principio de SOLID lo formuló Bertrand Meyer en 1988 en su libro “[Object Oriented Software Construction](https://sophia.javeriana.edu.co/~cbustaca/docencia/POO-2016-01/documentos/Object%20Oriented%20Software%20Construction-Meyer.pdf)” y dice: “Deberías ser capaz de extender el comportamiento de una clase, sin modificarla”. En otras palabras: las clases que usas deberían estar  **abiertas para poder extenderse y cerradas para modificarse** .
+El segundo principio de SOLID lo formuló Bertrand Meyer en 1988 en su libro “[Object Oriented Software Construction](https://sophia.javeriana.edu.co/~cbustaca/docencia/POO-2016-01/documentos/Object%20Oriented%20Software%20Construction-Meyer.pdf)” y dice: “Deberías ser capaz de extender el comportamiento de una clase, sin modificarla”. En otras palabras: las clases que usas deberían estar **abiertas para poder extenderse y cerradas para modificarse** .
 
 En su blog Robert C. Martin defendió este principio que [a priori puede parecer una paradoja](https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html). Es importante tener en cuenta el **Open/Closed Principle (OCP)** a la hora de desarrollar **clases, [librerías](https://profile.es/blog/librerias-javascript/) o frameworks.**
 
@@ -119,14 +119,14 @@ class Rectangle(Shape):
     def __init__(self, width, height):
         self.width = width
         self.height = height
-  
+
     def area(self):
         return self.width * self.height
 
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
-  
+
     def area(self):
         return math.pi * self.radius ** 2
 
@@ -151,7 +151,7 @@ print(f"El área del círculo es: {circle_area:.2f}")
 #     def __init__(self, base, height):
 #         self.base = base
 #         self.height = height
-  
+
 #     def area(self):
 #         return 0.5 * self.base * self.height
 
@@ -191,7 +191,7 @@ pinguino = Pinguino()
 
 hacer_volar_ave(golondrina)
 try:
-    hacer_volar_ave(pinguino) 
+    hacer_volar_ave(pinguino)
  # Funciona bien
 except Exception as e:
     print(f"Error->{e}")   # Lanza una excepción
@@ -249,11 +249,11 @@ class MultifunctionPrinter(ABC):
     @abstractmethod
     def print(self, document):
         pass
-  
+
     @abstractmethod
     def scan(self, document):
         pass
-  
+
     @abstractmethod
     def fax(self, document):
         pass
@@ -261,20 +261,20 @@ class MultifunctionPrinter(ABC):
 class AllInOnePrinter(MultifunctionPrinter):
     def print(self, document):
         print(f"Printing: {document}")
-  
+
     def scan(self, document):
         print(f"Scanning: {document}")
-  
+
     def fax(self, document):
         print(f"Faxing: {document}")
 
 class OldPrinter(MultifunctionPrinter):
     def print(self, document):
         print(f"Printing: {document}")
-  
+
     def scan(self, document):
         raise NotImplementedError("This printer cannot scan.")
-  
+
     def fax(self, document):
         raise NotImplementedError("This printer cannot fax.")
 
@@ -306,10 +306,10 @@ class Fax(ABC):
 class AllInOnePrinter(Printer, Scanner, Fax):
     def print(self, document):
         print(f"Printing: {document}")
-  
+
     def scan(self, document):
         print(f"Scanning: {document}")
-  
+
     def fax(self, document):
         print(f"Faxing: {document}")
 
@@ -320,7 +320,7 @@ class OldPrinter(Printer):
 class NewPrinter(Printer, Scanner):
     def print(self, document):
         print(f"Printing: {document}")
-  
+
     def scan(self, document):
         print(f"Scanning: {document}")
 
@@ -355,7 +355,7 @@ scan_document(new_printer, "new_printer->ID")
 
 **Depende de abstracciones** , no de clases concretas:
 
-1. Los módulos de alto nivel  **no deberían depender de módulos de bajo nivel** . Ambos deberían depender de abstracciones.
+1. Los módulos de alto nivel **no deberían depender de módulos de bajo nivel** . Ambos deberían depender de abstracciones.
 2. **Las abstracciones no deberían depender de los detalles** . Los detalles deberían depender de las abstracciones.
 
 ###### Códifo que no sigue DIP
