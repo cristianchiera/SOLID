@@ -1,4 +1,4 @@
-# PRINCIPIOS SOLID
+# PRINCIPIOS SOLID (Autor: Cristian Chiera)
 
 ## Para una mejor calidad de software.
 
