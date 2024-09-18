@@ -2,7 +2,7 @@
 
 ## Para una mejor calidad de software.
 
-![Texto alternativo](/home/cristianchiera/git/SOLID/img/solid.webp)
+![Texto alternativo](./img/solid.webp)
 
 Los principios SOLID son un conjunto de cinco principios de diseño que ayudan a crear código más legible, reutilizable, flexible y fácil de mantener. Estos principios se basan en la idea de que el buen diseño del software debería permitir que el código sea adaptable a los cambios sin causar demasiadas alteraciones.
 
