@@ -358,7 +358,7 @@ scan_document(new_printer, "new_printer->ID")
 1. Los módulos de alto nivel **no deberían depender de módulos de bajo nivel** . Ambos deberían depender de abstracciones.
 2. **Las abstracciones no deberían depender de los detalles** . Los detalles deberían depender de las abstracciones.
 
-###### Códifo que no sigue DIP
+###### Código que no sigue DIP
 
 ```python
 class Database:
